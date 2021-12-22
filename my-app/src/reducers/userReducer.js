@@ -16,7 +16,8 @@ export const allReducer = (state = persons, action) => {
       return [...updatedFriends];
     case "UPDATE_FRIEND":
       const { name, age, id } = action.user;
-      updatedFriends[id - 1] = { name, age };
+      const friendIndex = state.findIndex((person) => person.id === id);
+      updatedFriends[friendIndex] = { name, age };
       return [...updatedFriends];
     case "FILTER_LIST":
       const filteredList = state.filter((person) => {

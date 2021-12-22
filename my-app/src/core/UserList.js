@@ -13,6 +13,7 @@ export default function FriendList() {
         {list.map((person) => {
           return (
             <User
+              key={person.id}
               person={person}
               isOnEdit={isOnEdit}
               setIsOnEdit={setIsOnEdit}
